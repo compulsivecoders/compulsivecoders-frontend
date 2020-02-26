@@ -1,0 +1,41 @@
+{
+  "name": "compulsivecoders",
+  "version": "1.0.0",
+  "description": "Compulsive Coders Blog",
+  "author": "Charles Bochet / Gilbert Tchoi",
+  "private": true,
+  "scripts": {
+    "lint": "eslint --ext .js,.vue .",
+    "test": "jest",
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@ckeditor/ckeditor5-build-balloon": "^15.0.0",
+    "@ckeditor/ckeditor5-vue": "^1.0.0",
+    "@nuxtjs/axios": "^5.6.0",
+    "@nuxtjs/bulma": "^1.2.1",
+    "@nuxtjs/font-awesome": "^1.0.4",
+    "@nuxtjs/pwa": "^2.6.0",
+    "highlight.js": "^9.16.2",
+    "nuxt": "^2.0.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/eslint-config": "^1.0.1",
+    "@nuxtjs/eslint-module": "^0.2.1",
+    "@nuxtjs/google-analytics": "^2.2.2",
+    "@vue/test-utils": "^1.0.0-beta.27",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.1.0",
+    "eslint": "^5.15.1",
+    "eslint-plugin-nuxt": ">=0.4.2",
+    "jest": "^24.1.0",
+    "node-sass": "^4.12.0",
+    "nodemon": "^1.18.9",
+    "sass-loader": "^7.2.0",
+    "vue-jest": "^3.0.3"
+  }
+}
