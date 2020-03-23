@@ -18,6 +18,12 @@ import PostForm from '../../../components/form/PostForm'
 
 export default {
   components: { PostForm },
+  asyncData ({ store, params, app: { $axios } }) {
+    return $axios.get(`/posts/${params.id}`)
+      .then((data) => {
+        return data.data
+      })
+  },
   data () {
     return {
       id: null,
@@ -31,12 +37,6 @@ export default {
       author: null,
       isPublished: null
     }
-  },
-  asyncData ({ store, params, app: { $axios } }) {
-    return $axios.get(`/posts/${params.id}`)
-      .then((data) => {
-        return data.data
-      })
   },
   methods: {
     updatePost (payload) {

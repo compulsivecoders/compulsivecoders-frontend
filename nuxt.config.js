@@ -3,7 +3,8 @@ export default {
   mode: 'universal',
 
   buildModules: [
-    '@nuxtjs/google-analytics'
+    '@nuxtjs/google-analytics',
+    '@nuxtjs/dotenv'
   ],
   googleAnalytics: {
     id: 'UA-153795796-1',
