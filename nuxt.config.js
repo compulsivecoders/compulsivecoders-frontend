@@ -5,7 +5,9 @@ export default {
   buildModules: [
     '@nuxtjs/google-analytics',
     ['@nuxtjs/dotenv', { systemvars: true }],
-    '@nuxtjs/moment'
+    '@nuxtjs/moment',
+    // Doc: https://github.com/nuxt-community/eslint-module
+    '@nuxtjs/eslint-module'
   ],
   googleAnalytics: {
     id: 'UA-153795796-1',
@@ -44,13 +46,6 @@ export default {
   plugins: [
     { src: '~/plugins/ck-editor', mode: 'client' },
     '~/plugins/axios'
-  ],
-  /*
-  ** Nuxt.js dev-modules
-  */
-  devModules: [
-    // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module'
   ],
   /*
   ** Nuxt.js modules
