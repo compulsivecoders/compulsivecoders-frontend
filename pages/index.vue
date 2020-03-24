@@ -52,7 +52,7 @@ export default {
   asyncData ({ store, params, app: { $axios } }) {
     return $axios.get('/posts?include=tags')
       .then((data) => {
-        return { posts: data.posts }
+        return { posts: data.data.posts }
       })
   },
   methods: {
