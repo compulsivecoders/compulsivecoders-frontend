@@ -34,7 +34,11 @@ export default {
     }
   },
   mounted () {
-    this.$axios.get('/tags/' + this.tag + '/posts')
+    this.$axios.get('/tags/' + this.tag + '/posts', {
+      params: {
+        key: process.env.API_KEY
+      }
+    })
       .then((data) => {
         this.posts = data.data
       })

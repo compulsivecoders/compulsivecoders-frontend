@@ -50,7 +50,13 @@ export default {
     Card
   },
   asyncData ({ store, params, app: { $axios } }) {
-    return $axios.get('/posts/?include=tags&filter=tag:' + params.tag)
+    return $axios.get('/posts', {
+      params: {
+        include: 'tags',
+        filter: 'tag:' + params.tag,
+        key: process.env.API_KEY
+      }
+    })
       .then((data) => {
         return { posts: data.data.posts }
       })

@@ -26,7 +26,11 @@ export default {
     }
   },
   mounted () {
-    this.$axios.get('/posts')
+    this.$axios.get('/posts', {
+      params: {
+        key: process.env.API_KEY
+      }
+    })
       .then((data) => {
         this.posts = data.data.posts
       })
