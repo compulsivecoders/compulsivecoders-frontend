@@ -65,6 +65,8 @@ export default {
     baseURL: process.env.BASE_URL || 'http://localhost:2368/ghost/api/v3/content'
   },
   env: {
+    baseURL: process.env.BASE_URL || 'http://localhost:2368/ghost/api/v3/content',
+    key: process.env.API_KEY
   },
   /*
   ** Build configuration

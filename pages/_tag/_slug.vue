@@ -13,7 +13,7 @@ import 'highlight.js/styles/dracula.css'
 
 export default {
   asyncData ({ store, params, app: { $axios } }) {
-    return $axios.get('/posts/slug/welcome')
+    return $axios.get('/posts/slug/' + params.slug)
       .then((data) => {
         return { post: data.data.posts[0] }
       })
