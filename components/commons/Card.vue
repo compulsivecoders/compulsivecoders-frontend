@@ -17,7 +17,7 @@
       </div>
     </div>
     <div class="card-footer">
-      <span class="publication-date">{{ date }}</span>
+      <span class="publication-date">{{ $moment(date).format('MMMM Do YYYY') }}</span>
     </div>
   </nuxt-link>
 </template>

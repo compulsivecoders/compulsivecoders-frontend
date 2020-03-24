@@ -5,13 +5,12 @@
         v-for="(post, index) in posts.slice(0,3)"
         :key="index"
         :ratio="randomRatio()"
-        :image-src="post.thumbnail"
+        :image-src="post.feature_image"
         :title="post.title"
         :description="post.description"
-        :main-tag="post.mainTag"
+        :main-tag="post.primary_tag.slug"
         :slug="post.slug"
-        :tag="post.tag"
-        :date="post.date"
+        :date="post.created_at"
       />
     </div>
     <div class="column">
@@ -19,13 +18,12 @@
         v-for="(post, index) in posts.slice(3,6)"
         :key="index"
         :ratio="randomRatio()"
-        :image-src="post.thumbnail"
+        :image-src="post.feature_image"
         :title="post.title"
         :description="post.description"
-        :main-tag="post.mainTag"
+        :main-tag="post.primary_tag.slug"
         :slug="post.slug"
-        :tag="post.tag"
-        :date="post.date"
+        :date="post.created_at"
       />
     </div>
     <div class="column">
@@ -33,13 +31,12 @@
         v-for="(post, index) in posts.slice(6,9)"
         :key="index"
         :ratio="randomRatio()"
-        :image-src="post.thumbnail"
+        :image-src="post.feature_image"
         :title="post.title"
         :description="post.description"
-        :main-tag="post.mainTag"
+        :main-tag="post.primary_tag.slug"
         :slug="post.slug"
-        :tag="post.tag"
-        :date="post.date"
+        :date="post.created_at"
       />
     </div>
   </div>
@@ -53,9 +50,9 @@ export default {
     Card
   },
   asyncData ({ store, params, app: { $axios } }) {
-    return $axios.get('/tags/' + params.tag + '/posts')
+    return $axios.$get('/posts/?include=tags&filter=tag:' + params.tag)
       .then((data) => {
-        return { posts: data.data }
+        return { posts: data.posts }
       })
   },
   methods: {

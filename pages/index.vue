@@ -8,9 +8,8 @@
         :image-src="post.feature_image"
         :title="post.title"
         :description="post.description"
-        :main-tag="post.mainTag"
+        :main-tag="post.primary_tag.slug"
         :slug="post.slug"
-        :tag="post.tag"
         :date="post.date"
       />
     </div>
@@ -22,9 +21,8 @@
         :image-src="post.feature_image"
         :title="post.title"
         :description="post.description"
-        :main-tag="post.mainTag"
+        :main-tag="post.primary_tag.slug"
         :slug="post.slug"
-        :tag="post.tag"
         :date="post.date"
       />
     </div>
@@ -36,9 +34,8 @@
         :image-src="post.feature_image"
         :title="post.title"
         :description="post.description"
-        :main-tag="post.mainTag"
+        :main-tag="post.primary_tag.slug"
         :slug="post.slug"
-        :tag="post.tag"
         :date="post.date"
       />
     </div>
@@ -53,9 +50,9 @@ export default {
     Card
   },
   asyncData ({ store, params, app: { $axios } }) {
-    return $axios.get('/posts')
+    return $axios.$get('/posts?include=tags')
       .then((data) => {
-        return { posts: data.data.posts }
+        return { posts: data.posts }
       })
   },
   methods: {

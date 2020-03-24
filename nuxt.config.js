@@ -4,7 +4,8 @@ export default {
 
   buildModules: [
     '@nuxtjs/google-analytics',
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    '@nuxtjs/moment'
   ],
   googleAnalytics: {
     id: 'UA-153795796-1',
