@@ -2,25 +2,53 @@
   <div class="columns">
     <div class="column is-8-desktop is-12-tablet">
       <div class="post-section">
-        <span v-html="post.html" />
+        <PostCover :image-src="post.feature_image" />
+        <div class="post-tag">
+          {{ post.primary_tag.slug }}
+        </div>
+        <h1 class="post-title">
+          {{ post.title }}
+        </h1>
+        <!--
+        <span class="post-views">
+          <i class="fa fa-eye" />
+          {{ 0 }}
+        </span>
+        -->
+        <section>
+          <!-- eslint-disable-next-line -->
+          <div v-html="post.html" class="post-content" />
+        </section>
       </div>
+    </div>
+    <div class="column is-hidden-touch">
+      <CategoryPosts
+        :tag="post.primary_tag.slug"
+        theme="light"
+      />
     </div>
   </div>
 </template>
 
 <script>
-import 'highlight.js/styles/dracula.css'
+import CategoryPosts from '../../components/commons/CategoryPosts'
+import PostCover from '../../components/post/PostCover'
+import Prism from '~/plugins/prism'
 
 export default {
+  components: { PostCover, CategoryPosts },
   asyncData ({ store, params, env, app: { $axios } }) {
     return $axios.get('/posts/slug/' + params.slug, {
       params: {
-        key: env.API_KEY
+        include: 'tags'
       }
     })
       .then((data) => {
         return { post: data.data.posts[0] }
       })
+  },
+  mounted () {
+    Prism.highlightAll()
   }
 }
 </script>

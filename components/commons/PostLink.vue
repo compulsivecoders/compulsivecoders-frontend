@@ -1,6 +1,6 @@
 <template>
   <div :class="theme" class="post">
-    <a :href="link" class="thumbnail">
+    <a :href="routeLink" class="thumbnail">
       <figure class="image is-1by1">
         <img :src="imageSrc" :alt="title">
       </figure>
@@ -14,7 +14,7 @@
       <div class="post-meta">
         <div class="post-meta-content">
           <span class="post-date">
-            {{ date.format }}
+            {{ $moment(date).format('MMMM Do YYYY') }}
           </span>
         </div>
       </div>

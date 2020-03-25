@@ -1,10 +1,9 @@
-
 export default {
-  mode: 'spa',
+  mode: 'universal',
 
   buildModules: [
     '@nuxtjs/google-analytics',
-    ['@nuxtjs/dotenv', { systemvars: true }],
+    ['@nuxtjs/dotenv', { systemvars: true, only: ['BASE_URL', 'API_KEY'] }],
     '@nuxtjs/moment',
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module'
@@ -66,7 +65,7 @@ export default {
   },
   env: {
     baseURL: process.env.BASE_URL || 'http://localhost:2368/ghost/api/v3/content',
-    key: process.env.API_KEY
+    apiKey: process.env.API_KEY
   },
   /*
   ** Build configuration

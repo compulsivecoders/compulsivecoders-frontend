@@ -53,8 +53,7 @@ export default {
     return $axios.get('/posts', {
       params: {
         include: 'tags',
-        filter: 'tag:' + params.tag,
-        key: process.env.API_KEY
+        filter: 'tag:' + params.tag
       }
     })
       .then((data) => {

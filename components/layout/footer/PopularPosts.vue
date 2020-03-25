@@ -7,7 +7,7 @@
         :key="index"
         :image-src="post.feature_image"
         :title="post.title"
-        :main-tag="post.mainTag"
+        :main-tag="post.primary_tag.slug"
         :slug="post.slug"
         :date="post.created_at"
       />
@@ -28,7 +28,7 @@ export default {
   mounted () {
     this.$axios.get('/posts', {
       params: {
-        key: process.env.API_KEY
+        include: 'tags'
       }
     })
       .then((data) => {

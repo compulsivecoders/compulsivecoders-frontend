@@ -5,11 +5,11 @@
       <PostLink
         v-for="(post, index) in posts.slice(0,3)"
         :key="index"
-        :image-src="post.thumbnail"
+        :image-src="post.feature_image"
         :title="post.title"
-        :main-tag="post.mainTag"
+        :main-tag="post.primary_tag.slug"
         :slug="post.slug"
-        :date="post.date"
+        :date="post.created_at"
         theme="light"
       />
     </div>
@@ -34,13 +34,14 @@ export default {
     }
   },
   mounted () {
-    this.$axios.get('/tags/' + this.tag + '/posts', {
+    this.$axios.get('posts', {
       params: {
-        key: process.env.API_KEY
+        include: 'tags',
+        filter: 'tag:' + this.tag
       }
     })
       .then((data) => {
-        this.posts = data.data
+        this.posts = data.data.posts
       })
   }
 }

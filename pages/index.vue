@@ -49,11 +49,10 @@ export default {
   components: {
     Card
   },
-  asyncData ({ store, params, env, app: { $axios } }) {
+  asyncData ({ store, params, app: { $axios } }) {
     return $axios.get('/posts', {
       params: {
-        include: 'tags',
-        key: env.API_KEY
+        include: 'tags'
       }
     })
       .then((data) => {
