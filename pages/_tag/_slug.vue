@@ -77,7 +77,6 @@ export default {
 
   .post-content {
     overflow-wrap: break-word;
-    font-size: .75rem;
 
     /deep/ h2 {
       font-family: 'MontserratSemiBold';
@@ -118,6 +117,10 @@ export default {
     /deep/ ul {
       list-style-type: circle;
       margin-left: 35px;
+    }
+
+    /deep/ pre code {
+      font-size: .75rem;
     }
 
     /deep/ p {
