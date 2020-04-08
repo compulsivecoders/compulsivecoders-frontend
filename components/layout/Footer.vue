@@ -18,7 +18,7 @@
       </div>
     </div>
     <div class="footer-bottom-content">
-      <span class="mark">@CompulsiveCoders 2019</span>
+      <span class="mark">@CompulsiveCoders 2020</span>
     </div>
   </div>
 </template>
