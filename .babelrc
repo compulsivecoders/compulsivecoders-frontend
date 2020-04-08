@@ -15,7 +15,7 @@
   },
   "plugins": [
     ["prismjs", {
-      "languages": ["javascript", "css", "markup", "html", "php"],
+      "languages": ["javascript", "css", "markup", "html", "php", "clike", "markup-templating"],
       "plugins": ["line-numbers"],
       "theme": "twilight",
       "css": true
