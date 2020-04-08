@@ -100,7 +100,6 @@ export default {
       .post-title {
         font-family: 'MontserratSemiBold';
         font-size: 0.8rem;
-        margin-bottom: 10px;
       }
 
       .post-date {
