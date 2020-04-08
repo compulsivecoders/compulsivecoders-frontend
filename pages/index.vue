@@ -10,7 +10,7 @@
         :description="post.description"
         :main-tag="post.primary_tag.slug"
         :slug="post.slug"
-        :date="post.date"
+        :date="post.created_at"
       />
     </div>
     <div class="column">
@@ -23,7 +23,7 @@
         :description="post.description"
         :main-tag="post.primary_tag.slug"
         :slug="post.slug"
-        :date="post.date"
+        :date="post.created_at"
       />
     </div>
     <div class="column">
@@ -36,7 +36,7 @@
         :description="post.description"
         :main-tag="post.primary_tag.slug"
         :slug="post.slug"
-        :date="post.date"
+        :date="post.created_at"
       />
     </div>
   </div>

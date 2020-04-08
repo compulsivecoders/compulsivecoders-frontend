@@ -1,5 +1,5 @@
 export default {
-  mode: 'universal',
+  mode: 'spa',
 
   buildModules: [
     '@nuxtjs/google-analytics',
