@@ -31,9 +31,9 @@
 </template>
 
 <script>
+import Prism from '~/plugins/prism'
 import CategoryPosts from '../../components/commons/CategoryPosts'
 import PostCover from '../../components/post/PostCover'
-import Prism from '~/plugins/prism'
 
 export default {
   components: { PostCover, CategoryPosts },
