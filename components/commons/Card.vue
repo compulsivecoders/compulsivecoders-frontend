@@ -13,11 +13,11 @@
         <h2 class="card-title">
           {{ title }}
         </h2>
-        {{ description }}
+        {{ excerpt }}
       </div>
     </div>
     <div class="card-footer">
-      <span class="publication-date">{{ $moment(date).format('MMMM Do YYYY') }}</span>
+      <span class="publication-date">{{ $moment.parseZone(date).format('MMMM Do YYYY') }}</span>
     </div>
   </nuxt-link>
 </template>
@@ -29,7 +29,7 @@ export default {
       type: String,
       default: ''
     },
-    description: {
+    excerpt: {
       type: String,
       default: ''
     },

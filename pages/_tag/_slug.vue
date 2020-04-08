@@ -31,9 +31,9 @@
 </template>
 
 <script>
-import Prism from '~/plugins/prism'
 import CategoryPosts from '../../components/commons/CategoryPosts'
 import PostCover from '../../components/post/PostCover'
+import Prism from '~/plugins/prism'
 
 export default {
   components: { PostCover, CategoryPosts },
@@ -77,6 +77,7 @@ export default {
 
   .post-content {
     overflow-wrap: break-word;
+    font-size: .75rem;
 
     /deep/ h2 {
       font-family: 'MontserratSemiBold';
@@ -117,6 +118,11 @@ export default {
     /deep/ ul {
       list-style-type: circle;
       margin-left: 35px;
+    }
+
+    /deep/ p {
+      margin-top: 5px;
+      margin-bottom: 5px;
     }
   }
 </style>
